@@ -15,6 +15,7 @@ export default function SignIn() {
   const navigate = useNavigate();
 
   const handleChange = (e) => {
+
     setFormData({
       //use ... to keep the formdata because we want to keep the username after user enter password
       ...formData,
@@ -36,6 +37,7 @@ export default function SignIn() {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
+      console.log(data);
       if (data.success === false) {
         dispatch(signInFailure(data.message));
         return;
