@@ -147,6 +147,7 @@ export default function CreateListing() {
       if (data.success === false) {
         setError(data.message)
       }
+      console.log("What is discount price ", formData.discountPrice);
       navigate(`/listing/${data._id}`)
     } catch (error) {
       setError(error.message);
