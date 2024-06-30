@@ -2,7 +2,8 @@ import express from "express";
 import {
   creatListing,
   deleteListing,
-  updateListing
+  updateListing,
+  getListing,
 } from "../controllers/listing.controller.js";
 import { verifyToken } from "../utils/varifyUser.js";
 
@@ -11,5 +12,6 @@ const router = express.Router();
 router.post("/create", verifyToken, creatListing);
 router.delete("/delete/:id", verifyToken, deleteListing);
 router.post("/update/:id", verifyToken, updateListing);
+router.get("/get/:id", getListing);
 
 export default router;
